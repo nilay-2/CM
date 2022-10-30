@@ -16,6 +16,8 @@ const Form = (props) => {
   };
   return (
     <>
+      <h1> Contact Management </h1>
+
       <form action="submit" onSubmit={submitHandler}>
         <input
           type="text"
