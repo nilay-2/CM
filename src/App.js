@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import uuid from "react-uuid";
 import "./styles.css";
 import Form from "./pages/form";
@@ -17,9 +18,20 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1> Contact Management </h1>
-      <Form getDataHandler={getDataHandler} />
-      <Render list={contactList} deleteContact={deleteContact} />
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            component={() => {
+              <Form />;
+            }}
+          />
+          <Route path="/contacts" exact component={Render} />
+        </Routes>
+      </Router>
+      {/* <Form getDataHandler={getDataHandler} />
+      <Render list={contactList} deleteContact={deleteContact} /> */}
     </div>
   );
 }
