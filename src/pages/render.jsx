@@ -7,7 +7,7 @@ const render = (props) => {
           style={{
             display: "flex",
             width: "100%",
-            justifyContent: "space-around"
+            justifyContent: "space-around",
           }}
           key={contact.id}
         >
@@ -20,5 +20,4 @@ const render = (props) => {
     </>
   );
 };
-
 export default render;
